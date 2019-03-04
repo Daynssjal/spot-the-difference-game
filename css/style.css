@@ -1,0 +1,348 @@
+/* GENERAL SETUP */
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+}
+
+.container {
+    width: 80%;
+    height: auto;
+    margin: 2em auto 4em;
+    background-color: #eee;
+    overflow: hidden;
+}
+
+.container:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+
+/* NAVIGATION */
+
+.navigation {
+    font-size: 1.2em;
+    width: 100%;
+    background-color: #eee;
+    margin: 1em auto;
+    padding-bottom: 2em;
+    text-align: center;
+}
+
+.navigation h2 {
+    padding: 0.5em 0 0;
+}
+
+#stripe {
+    background: rgb(107, 105, 105);
+    width: 50%;
+    line-height: 2em;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+#stripe li {
+    display: inline-block;
+    width: 45%;
+    font-weight: bold;
+    color: rgb(241, 240, 240);
+    list-style-type: none;
+    padding:  0.5em 1em;
+    cursor: pointer;
+}
+
+#stripe li:nth-child(2) {
+    color: rgb(228, 206, 119);
+}
+
+#round, #score {
+    color: rgb(241, 240, 240);
+}
+
+#rounds {
+    background: rgb(197, 195, 195);
+    width: 50%;
+    line-height: 2em;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+#rounds li {
+    display: inline-block;
+    width: 45%;
+    font-weight: bold;
+    color: rgb(58, 56, 56); 
+    list-style-type: none;
+    padding:  0.5em 1em;
+    cursor: pointer;
+}
+
+#time, #attempt {
+    color: rgb(177, 28, 28);
+}
+
+#start {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    background-color: rgb(212, 209, 209);
+    padding: 0.8em 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 5px;
+    box-shadow: -3px 3px rgb(196, 180, 180);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+#start:hover {
+    box-shadow: -2px 2px rgb(196, 180, 180);
+}
+
+#start:focus {
+    outline: none;
+}
+
+#start:active {
+    box-shadow: 0px 0px rgb(196, 180, 180);
+}
+
+
+/* INSTRUCTIONS */
+
+.intro {
+    text-align: center;
+    width: 60%;
+    margin: 4em auto 0;
+}
+
+.intro h4 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.intro p {
+    line-height: 1.5em;
+}
+
+.intro p:nth-of-type(2) {
+    color: rgb(187, 150, 14);
+    font-weight: bold;
+}
+
+
+/* PICTURES */
+
+.pictures {
+    width: 90%; 
+    margin: 2em auto 0;
+    background-color: #eee;
+    transition: opacity 1s ease-out;
+}
+
+#imageA,
+#imageB {
+    display: block;
+    float: left;
+    width: 48%;
+    height: auto;
+    margin-top: 1.25em;
+    margin-bottom: 2em;
+    border: 5px solid rgb(216, 214, 214);
+}
+
+#imageA {
+    margin-right: 2em;
+}
+
+
+/* TASK */
+
+#task {
+    width: 30%;
+    margin: 4em auto 0;
+    text-align: center;
+}
+
+#task h4 {
+    font-size: 1.2em;
+}
+
+#task p {
+    cursor: pointer;
+    color: rgb(107, 105, 105);
+    font-weight: bold;
+}
+
+#options {
+    list-style-type: none;
+    padding: 0;
+}
+
+#options li {
+    padding: 0.5em 0;
+    cursor: pointer;
+}
+
+#options li:hover {
+    font-weight: bold;
+}
+
+/* CHANGING CLASSES */
+
+.hide {
+    display: none;
+}
+
+.fadeOut {
+    animation: fadeout 1.5s linear;
+}
+
+.fadeIn {
+    animation: fadein 1.5s linear;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1250px) {
+    .container {
+        width: 95%;
+    }
+
+    .pictures {
+        width: 95%;
+    }
+    
+    #imageA,
+    #imageB {
+        width: 48%;
+    }
+
+    #imageA {
+        margin-right: 1.2em;
+    }
+}
+
+@media (max-width: 860px) {
+    .navigation {
+        font-size: 0.9em;
+        padding-bottom: 2em;
+    }
+
+    .pictures {
+        margin: 3em auto 0;
+    }
+
+    #imageA,
+    #imageB {
+        float: none;
+        width: 70%;
+        margin: 1em auto;
+    }
+
+    #task {
+        width: 95%;
+        margin: 3em auto 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    .navigation {
+        padding-bottom: 1em;
+    }
+
+    #stripe, #rounds {
+        float: none;
+        width: 100%;
+    }
+
+    #task {
+        margin: 1em auto 0;
+    }
+    
+    #task h4 {
+        font-size: 1em;
+    }
+    
+    #options li {
+        font-size: 0.9em;
+    }
+    
+    .intro {
+        width: 80%;
+        margin: 1em auto 0;
+    }
+    
+    .intro h4 {
+        font-size: 1.1em;
+    }
+    
+    .intro p {
+        line-height: 1.5em;
+        font-size: 0.9em;
+    }
+
+    #start {
+        display: block;
+        margin: 2em auto;
+    }
+
+    .pictures {
+        width: 95%; 
+        margin: 0.5em auto 0;
+    }
+
+    #imageA,
+    #imageB {
+        float: none;
+        width: 100%;
+        margin: 1em auto;
+    }
+    
+}
